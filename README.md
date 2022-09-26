@@ -13,6 +13,7 @@ The network is then retrained using real seismic data. We employ a random sample
 A seismic survey is conducted above the area of interest by using reflective seismology, an exploration method in which an energy source is used to send a signal or wave into the subsurface. These waves then interact with the rock layers at different speeds and depending on the physical properties they can reflect, refract, or diffract in different ways. These waves are then received by geophones that are placed at the surface and the travel time is recorded. After processing this data, a seismic interpreter will then have the task of mapping geological faults. 
 
 
+
 ![image](https://user-images.githubusercontent.com/62422827/192174342-5bb2a05b-e9a3-4159-831d-c3a6c7babbdb.png)
 
 Figure 1: Seismic Waves
@@ -20,11 +21,13 @@ Figure 1: Seismic Waves
 Faults are geological structures created by the combination of many processes such as tectonic plate movement, gravity, and overpressures. These are cracks or planes in which blocks of rock slip across, and they can have many sizes ranging from meters to kilometers. Faults are important for oil and gas exploration because they may act as a natural trap for hydrocarbons and can also help in the migration of these. Additional to the discovery of hydrocarbons, fault mapping is an essential step in the reservoir characterization process, which aims to provide an optimal understanding of the reservoir’s internal architecture and help calculate key economic indicators.
 
 
+
 ![image](https://user-images.githubusercontent.com/62422827/192174360-ba276b94-c35f-407d-a69f-1d15620ff59c.png)
 
 Figure 2: Seismic Faults
 
 Traditional methods for fault detection require a seismic interpreter to trace and label faults manually. This process consumes substantial amounts of time and can be considered an inefficient process as it could take anywhere from weeks to months to label faults within a typically sized area of interest. To improve the interpretation efficiency, numerous researchers have proposed various methods. Since faults generate discontinuities and abruptions, some methods use statistical models to try to identify faults. However, fault detection using only a few physical attributes is limited and not very effective at correctly detecting faults. Therefore, the best detection mechanisms use machine learning and deep neural networks (DNNs) to achieve fast and reliable results in fault detection. 
+
 
 
 ![image](https://user-images.githubusercontent.com/62422827/192174382-d00e7ef3-be31-4558-a813-49f584b1782b.png)
@@ -37,6 +40,7 @@ The convolutional neural network (CNN) is one of the most common DNNs, and it ha
 ## Business Problem
 For oil and gas producers, upstream expenses can be divided into the following categories. Exploration and development include expenditures related to searching for and developing the facilities and infrastructure to produce reserves. Production includes costs associated with extracting oil and natural gas from the ground once the field has been developed. Property acquisition includes costs incurred to purchase proved and unproved oil and natural gas reserves. As we can see from the chart published by the U.S. Energy Information Administration, the costs of exploration and drilling make up a large portion of their yearly expenditures.
 
+ 
  
   ![image](https://user-images.githubusercontent.com/62422827/192174410-c70aa3a8-fc8e-484c-82da-2966ffbe01ab.png)
 
@@ -70,6 +74,7 @@ A seismic image provides a structural snapshot of the Earth's subsurface at one 
 ![image](https://user-images.githubusercontent.com/62422827/192174533-dab31c2b-86e7-403c-8fda-86643debae1b.png)
 
  Figure 5: Seismic Image
+
 
 
 ![image](https://user-images.githubusercontent.com/62422827/192174596-62843b9a-b196-4ac7-bc6d-05ec6a2ce350.png)
@@ -118,6 +123,7 @@ In this project, we have used Convolutional Neural Network (CNN), which is a com
 A general schematic of the U-Net framework is shown below:
 
  
+ 
 ![image](https://user-images.githubusercontent.com/62422827/192174858-f1d10e89-f0ca-4b73-931d-2c32418d5d7d.png)
 
 Figure 9: U-Net Framework
@@ -141,6 +147,7 @@ In total, the final U-Net block has four contraction and four expansion blocks, 
 For this study, we will use two volumes of data: a seismic cube and a fault cube, with the seismic cube serving as training data and the fault cube serving as label data. The fault data consists of a series of manually mapped surfaces with values between 0 and 1. The image on the left shows a 2D seismic display in the inline direction, while the image on the right shows the same display with faults overlaid.
 
 
+
 ![image](https://user-images.githubusercontent.com/62422827/192174889-fbca7b19-952f-46a6-a7b0-06d9c08ed1b5.png)
 
 Figure 14: A seismic example with fault overlay
@@ -158,6 +165,7 @@ As a result, our input tensors have the form (101, 1, 589, 751), where 1 denotes
 The following are the general training parameters. We have trained the model with 25 epochs, but we'll see that for this dataset, the model begins to pick out faults very effectively at around 10 epochs. We ran the model on an NVIDIA GeForce RTX 2060 Super with 8GB memory, one batch at a time.
  
  
+ 
 ![image](https://user-images.githubusercontent.com/62422827/192174910-d79a0b8d-0d27-46dc-804b-51c063e2ee75.png)
 
 Figure 15: Hyperparameters Used
@@ -165,6 +173,7 @@ Figure 15: Hyperparameters Used
 
 ## Result
 The images below were gathered at random at three different epochs. In Epoch 4, the model is already beginning to detect faults, and by Epoch 19, it has successfully mapped the fault.
+ 
  
  
 ![image](https://user-images.githubusercontent.com/62422827/192174915-0ec035d8-4d7d-431e-8504-0407295a1727.png)
