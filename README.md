@@ -7,19 +7,21 @@ Seismic surveys are one of the primary mechanisms used in oil and natural gas ex
 A seismic survey is conducted above the area of interest by using reflective seismology, an exploration method in which an energy source is used to send a signal or wave into the subsurface. These waves then interact with the rock layers at different speeds and depending on the physical properties they can reflect, refract, or diffract in different ways. These waves are then received by geophones that are placed at the surface and the travel time is recorded. After processing this data, a seismic interpreter will then have the task of mapping geological faults. 
 
 
- ![image](https://user-images.githubusercontent.com/62422827/192174342-5bb2a05b-e9a3-4159-831d-c3a6c7babbdb.png)
+![image](https://user-images.githubusercontent.com/62422827/192174342-5bb2a05b-e9a3-4159-831d-c3a6c7babbdb.png)
+
 Figure 1: Seismic Waves
 
 Faults are geological structures created by the combination of many processes such as tectonic plate movement, gravity, and overpressures. These are cracks or planes in which blocks of rock slip across, and they can have many sizes ranging from meters to kilometers. Faults are important for oil and gas exploration because they may act as a natural trap for hydrocarbons and can also help in the migration of these. Additional to the discovery of hydrocarbons, fault mapping is an essential step in the reservoir characterization process, which aims to provide an optimal understanding of the reservoir’s internal architecture and help calculate key economic indicators.
 
 
- ![image](https://user-images.githubusercontent.com/62422827/192174360-ba276b94-c35f-407d-a69f-1d15620ff59c.png)
+![image](https://user-images.githubusercontent.com/62422827/192174360-ba276b94-c35f-407d-a69f-1d15620ff59c.png)
+
 Figure 2: Seismic Faults
 
 Traditional methods for fault detection require a seismic interpreter to trace and label faults manually. This process consumes substantial amounts of time and can be considered an inefficient process as it could take anywhere from weeks to months to label faults within a typically sized area of interest. To improve the interpretation efficiency, numerous researchers have proposed various methods. Since faults generate discontinuities and abruptions, some methods use statistical models to try to identify faults. However, fault detection using only a few physical attributes is limited and not very effective at correctly detecting faults. Therefore, the best detection mechanisms use machine learning and deep neural networks (DNNs) to achieve fast and reliable results in fault detection. 
 
 
- ![image](https://user-images.githubusercontent.com/62422827/192174382-d00e7ef3-be31-4558-a813-49f584b1782b.png)
+![image](https://user-images.githubusercontent.com/62422827/192174382-d00e7ef3-be31-4558-a813-49f584b1782b.png)
 
 Figure 3: An example of a seismic image (Source: Force Competition)
 
@@ -29,7 +31,7 @@ The convolutional neural network (CNN) is one of the most common DNNs, and it ha
 For oil and gas producers, upstream expenses can be divided into the following categories. Exploration and development include expenditures related to searching for and developing the facilities and infrastructure to produce reserves. Production includes costs associated with extracting oil and natural gas from the ground once the field has been developed. Property acquisition includes costs incurred to purchase proved and unproved oil and natural gas reserves. As we can see from the chart published by the U.S. Energy Information Administration, the costs of exploration and drilling make up a large portion of their yearly expenditures.
 
  
- ![image](https://user-images.githubusercontent.com/62422827/192174410-c70aa3a8-fc8e-484c-82da-2966ffbe01ab.png)
+![image](https://user-images.githubusercontent.com/62422827/192174410-c70aa3a8-fc8e-484c-82da-2966ffbe01ab.png)
 
 Figure 4: Source: U.S. Energy Information Administration, based on Evaluate Energy database
 
@@ -58,7 +60,6 @@ A seismic image provides a structural snapshot of the Earth's subsurface at one 
 
 
 ![image](https://user-images.githubusercontent.com/62422827/192174533-dab31c2b-86e7-403c-8fda-86643debae1b.png)
-![image](https://user-images.githubusercontent.com/62422827/192174547-a623cc43-1323-4be8-a2b9-78e746b8a497.png)
 
  Figure 5: Seismic Image
 
@@ -70,9 +71,10 @@ Figure 6: An example of a Seismic image
 Faults are geological structures formed by a variety of physical processes such as pressures, gravity, plate tectonics, and so on. These are the cracks or planes that a block of rocks will slide across. Faults come in a variety of sizes, ranging from a few meters to miles. The *San Andreas Fault* is an example of strike-slip faulting on a massive scale (also called Transform Fault).
 
 
- ![image](https://user-images.githubusercontent.com/62422827/192174654-b780f955-836f-499e-b84d-a3052a92f56b.png)
+![image](https://user-images.githubusercontent.com/62422827/192174654-b780f955-836f-499e-b84d-a3052a92f56b.png)
 
 Figure 7: Different types of Faults
+
 
 ## Significance of Fault Mapping in seismic data
 
@@ -90,7 +92,7 @@ It has a very well-expressed polygonal fault system in the overburden, which is 
 To employ a synthetic model trained algorithm that accurately maps deep and shallow faulting and approximates human interpretation.
 
 
-##Data Exploration
+## Data Exploration
 This study's data is in the SEG-Y format, which is the industry standard for seismic data (SEG stands for Society of Exploration Geophysicists). This is a specialized data format, and we used a Python library called 'segyio' that was designed to read it. Because we are working with a 3D dataset, the segyio can easily convert it to a 3D NumPy array. A 3D grid structure example is shown below, along with three planar surfaces: inline, crossline, and z-slice. These are the 2D surfaces that are commonly used in the seismic industry to visualize data.
  
  
@@ -147,7 +149,7 @@ As a result, our input tensors have the form (101, 1, 589, 751), where 1 denotes
 The following are the general training parameters. We have trained the model with 25 epochs, but we'll see that for this dataset, the model begins to pick out faults very effectively at around 10 epochs. We ran the model on an NVIDIA GeForce RTX 2060 Super with 8GB memory, one batch at a time.
  
  
- ![image](https://user-images.githubusercontent.com/62422827/192174910-d79a0b8d-0d27-46dc-804b-51c063e2ee75.png)
+![image](https://user-images.githubusercontent.com/62422827/192174910-d79a0b8d-0d27-46dc-804b-51c063e2ee75.png)
 
 Figure 15: Hyperparameters Used
 
