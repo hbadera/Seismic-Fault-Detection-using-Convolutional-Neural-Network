@@ -16,7 +16,7 @@ A seismic survey is conducted above the area of interest by using reflective sei
 
 ![image](https://user-images.githubusercontent.com/62422827/192174342-5bb2a05b-e9a3-4159-831d-c3a6c7babbdb.png)
 
-Figure 1: Seismic Waves
+#### Figure 1: Seismic Waves
 
 Faults are geological structures created by the combination of many processes such as tectonic plate movement, gravity, and overpressures. These are cracks or planes in which blocks of rock slip across, and they can have many sizes ranging from meters to kilometers. Faults are important for oil and gas exploration because they may act as a natural trap for hydrocarbons and can also help in the migration of these. Additional to the discovery of hydrocarbons, fault mapping is an essential step in the reservoir characterization process, which aims to provide an optimal understanding of the reservoir’s internal architecture and help calculate key economic indicators.
 
@@ -24,7 +24,7 @@ Faults are geological structures created by the combination of many processes su
 
 ![image](https://user-images.githubusercontent.com/62422827/192174360-ba276b94-c35f-407d-a69f-1d15620ff59c.png)
 
-Figure 2: Seismic Faults
+#### Figure 2: Seismic Faults
 
 Traditional methods for fault detection require a seismic interpreter to trace and label faults manually. This process consumes substantial amounts of time and can be considered an inefficient process as it could take anywhere from weeks to months to label faults within a typically sized area of interest. To improve the interpretation efficiency, numerous researchers have proposed various methods. Since faults generate discontinuities and abruptions, some methods use statistical models to try to identify faults. However, fault detection using only a few physical attributes is limited and not very effective at correctly detecting faults. Therefore, the best detection mechanisms use machine learning and deep neural networks (DNNs) to achieve fast and reliable results in fault detection. 
 
@@ -32,7 +32,7 @@ Traditional methods for fault detection require a seismic interpreter to trace a
 
 ![image](https://user-images.githubusercontent.com/62422827/192174382-d00e7ef3-be31-4558-a813-49f584b1782b.png)
 
-Figure 3: An example of a seismic image (Source: Force Competition)
+#### Figure 3: An example of a seismic image (Source: Force Competition)
 
 The convolutional neural network (CNN) is one of the most common DNNs, and it has proven to be very effective at many tasks. However, to properly train a CNN, we need a large number of processed and labeled samples, which can be in the thousands or millions. Seismic data is very expensive to acquire so having large datasets to work with is usually out of reach for smaller companies in the industry. So, overcoming this limitation is of paramount importance, as it has a direct impact on the costs of exploration. In this paper, we are going to use a strategy that utilizes synthetic data and a small sample of real data to train a CNN based on the U-Net architecture to automatically detect faults. In real-world applications, it would mean that a seismic interpreter would only need to provia de few labeled samples of a dataset to train the network, and then the model should be able to automatically detect and label the rest of the faults in the same dataset.
 
@@ -44,7 +44,7 @@ For oil and gas producers, upstream expenses can be divided into the following c
  
   ![image](https://user-images.githubusercontent.com/62422827/192174410-c70aa3a8-fc8e-484c-82da-2966ffbe01ab.png)
 
-Figure 4: Source: U.S. Energy Information Administration, based on Evaluate Energy database
+#### Figure 4: Source: U.S. Energy Information Administration, based on Evaluate Energy database
 
 
 Cost-savings strategies are of high importance to producers as they will result in significant improvements to their profits. The possible economic potential benefits of our model are:
@@ -73,20 +73,21 @@ A seismic image provides a structural snapshot of the Earth's subsurface at one 
 
 ![image](https://user-images.githubusercontent.com/62422827/192174533-dab31c2b-86e7-403c-8fda-86643debae1b.png)
 
- Figure 5: Seismic Image
+#### Figure 5: Seismic Image
 
 
 
 ![image](https://user-images.githubusercontent.com/62422827/192174596-62843b9a-b196-4ac7-bc6d-05ec6a2ce350.png)
          
-Figure 6: An example of a Seismic image
+#### Figure 6: An example of a Seismic image
+
 
 Faults are geological structures formed by a variety of physical processes such as pressures, gravity, plate tectonics, and so on. These are the cracks or planes that a block of rocks will slide across. Faults come in a variety of sizes, ranging from a few meters to miles. The *San Andreas Fault* is an example of strike-slip faulting on a massive scale (also called Transform Fault).
 
 
 ![image](https://user-images.githubusercontent.com/62422827/192174654-b780f955-836f-499e-b84d-a3052a92f56b.png)
 
-Figure 7: Different types of Faults
+#### Figure 7: Different types of Faults
 
 
 ## Significance of Fault Mapping in seismic data
@@ -113,7 +114,7 @@ This study's data is in the SEG-Y format, which is the industry standard for sei
  
 ![image](https://user-images.githubusercontent.com/62422827/192174705-9cb115a6-ca1a-4308-afdb-7f4ebe79cf95.png)
 
-Figure 8: A 3D seismic grid with an example of a 2D seismic display along the Inline direction with Fault overlay
+#### Figure 8: A 3D seismic grid with an example of a 2D seismic display along the Inline direction with Fault overlay
 
 
 
@@ -126,7 +127,7 @@ A general schematic of the U-Net framework is shown below:
  
 ![image](https://user-images.githubusercontent.com/62422827/192174858-f1d10e89-f0ca-4b73-931d-2c32418d5d7d.png)
 
-Figure 9: U-Net Framework
+#### Figure 9: U-Net Framework
 
 The U-Net is divided into two distinct flow paths:
 #### (i)	a forward contraction path involving several downsampling steps.
@@ -150,7 +151,7 @@ For this study, we will use two volumes of data: a seismic cube and a fault cube
 
 ![image](https://user-images.githubusercontent.com/62422827/192174889-fbca7b19-952f-46a6-a7b0-06d9c08ed1b5.png)
 
-Figure 14: A seismic example with fault overlay
+#### Figure 10: A seismic example with fault overlay
 
 ##### As we can see the left image has the actual appearance of faults compared to the right.
 
@@ -168,7 +169,7 @@ The following are the general training parameters. We have trained the model wit
  
 ![image](https://user-images.githubusercontent.com/62422827/192174910-d79a0b8d-0d27-46dc-804b-51c063e2ee75.png)
 
-Figure 15: Hyperparameters Used
+#### Figure 11: Hyperparameters Used
 
 
 ## Result
@@ -178,7 +179,7 @@ The images below were gathered at random at three different epochs. In Epoch 4, 
  
 ![image](https://user-images.githubusercontent.com/62422827/192174915-0ec035d8-4d7d-431e-8504-0407295a1727.png)
 
-Figure 16: Result Faults
+#### Figure 12: Result Faults
 
 
 When we look at the model performance, we can see that the loss function drops dramatically within the first 5 epochs and then stabilizes around the 15th epoch. This rapid decrease in model loss is most likely due to the use of clean synthetic data for training.
@@ -187,7 +188,7 @@ When we look at the model performance, we can see that the loss function drops d
  
 ![image](https://user-images.githubusercontent.com/62422827/192175419-b0165a90-c562-46b0-88c2-dc65dd6901bf.png)
 
-Figure 17: Plot between UNet Loss vs Epoch
+#### Figure 13: Plot between UNet Loss vs Epoch
 
 
 
