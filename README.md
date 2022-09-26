@@ -27,11 +27,12 @@ Figure 3: An example of a seismic image (Source: Force Competition)
 
 The convolutional neural network (CNN) is one of the most common DNNs, and it has proven to be very effective at many tasks. However, to properly train a CNN, we need a large number of processed and labeled samples, which can be in the thousands or millions. Seismic data is very expensive to acquire so having large datasets to work with is usually out of reach for smaller companies in the industry. So, overcoming this limitation is of paramount importance, as it has a direct impact on the costs of exploration. In this paper, we are going to use a strategy that utilizes synthetic data and a small sample of real data to train a CNN based on the U-Net architecture to automatically detect faults. In real-world applications, it would mean that a seismic interpreter would only need to provia de few labeled samples of a dataset to train the network, and then the model should be able to automatically detect and label the rest of the faults in the same dataset.
 
+
 ## Business Problem
 For oil and gas producers, upstream expenses can be divided into the following categories. Exploration and development include expenditures related to searching for and developing the facilities and infrastructure to produce reserves. Production includes costs associated with extracting oil and natural gas from the ground once the field has been developed. Property acquisition includes costs incurred to purchase proved and unproved oil and natural gas reserves. As we can see from the chart published by the U.S. Energy Information Administration, the costs of exploration and drilling make up a large portion of their yearly expenditures.
 
  
-![image](https://user-images.githubusercontent.com/62422827/192174410-c70aa3a8-fc8e-484c-82da-2966ffbe01ab.png)
+  ![image](https://user-images.githubusercontent.com/62422827/192174410-c70aa3a8-fc8e-484c-82da-2966ffbe01ab.png)
 
 Figure 4: Source: U.S. Energy Information Administration, based on Evaluate Energy database
 
@@ -52,6 +53,7 @@ The improved fault detection effectiveness could reduce the number of dry holes 
 ### •	Faster reserves.
 By accelerating the process of exploration, we can potentially cover more areas of exploration each year and increase the chances of developing reserves. The increase in reserves can give more economic value to the company.
 Next, we introduce the methodology of the proposed strategy for seismic fault detection. Finally, we conclude our findings at the end of this paper.
+
 
 ## Literature Review
 
@@ -85,6 +87,7 @@ The mapping of faults during the oil/gas development phase is critical in making
 Finally, large-scale fault mapping aids in understanding regional geodynamic processes occurring on Earth. This is essential for comprehending natural hazards such as earthquakes, volcanoes, landslides, and so on.
 As we can see, there are numerous advantages to fault identification, particularly in hydrocarbon exploration. As a result, considerable effort has been expended in seismic exploration to accurately identify and map the faults. Manual mapping of faults, on the other hand, is a time-consuming process that can take days or weeks even in a small survey area.
 Now we will see some Machine Learning and/or Deep Learning methods on how to identify faults faster.
+
 
 ## Data
 With advances in Deep Neural Network technology, it is possible to train seismic images to create a model that can identify faults in seismic data. In this article, we will walk you through a Deep Learning Framework that can predict faults from seismic data. With advances in Deep Neural Network technology, it may be possible to train seismic images to create a model that can identify faults in seismic data. For this study, we used synthetic seismic data provided by Force Competition. The Ichthys Seismic dataset is provided courtesy of Geoscience Australia and is available under a CC BY 4.0 license.
@@ -167,9 +170,11 @@ When we look at the model performance, we can see that the loss function drops d
  
  
  
-![Uploading image.png…]()
+![image](https://user-images.githubusercontent.com/62422827/192175419-b0165a90-c562-46b0-88c2-dc65dd6901bf.png)
 
 Figure 17: Plot between UNet Loss vs Epoch
+
+
 
 ## Conclusion and Recommendations
 
